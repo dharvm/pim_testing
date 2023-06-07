@@ -26,7 +26,7 @@ print(webdriver.__version__)
 # pim_login(browser) # for login to PIM Dashboard
 
 #---------------------SYSTEM ADMIN-------------------------
-# user_create(browser)  # for creating new user
+user_create(browser)  # for creating new user
 # role_create(browser)  # for creating new role
 # user_AssignRole(browser)  # to assign role to user
 # user_AssignCategory(browser)  # to assign category in user

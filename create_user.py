@@ -6,7 +6,7 @@ def user_create(browser):
     browser.find_element("xpath",'//span[contains(text(),"System Admin")]').click()
     browser.find_element("xpath",'//a[contains(text(),"User Management")]').click()
     time.sleep(2)
-    browser.find_element("xpath",'//span[contains(text(),"Add New User")]').click()
+    browser.find_element("xpath",'//span[contains(text(),"Create")]').click()
 
     time.sleep(2)
 
