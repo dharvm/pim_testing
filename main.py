@@ -22,7 +22,6 @@ chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
 browser = webdriver.Chrome(chrome_options=chrome_options)
 # browser.maximize_window()
 
-print(webdriver.__version__)
 # pim_login(browser) # for login to PIM Dashboard
 
 #---------------------SYSTEM ADMIN-------------------------
