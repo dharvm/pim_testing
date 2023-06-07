@@ -8,6 +8,12 @@ from Channel_Brand import channel_brand
 from Channel_category import channel_category
 from Channel_Mapping import channel_mapping
 
+from Product_Attribute import product_attribute
+from Reference_attribute import reference_attribute
+from category_master_and_mapping import category_master_mapping
+from category_subscription import category_subscription
+from brand_subscription import brand_subscription
+
 from selenium import webdriver
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--incognito")
@@ -19,17 +25,28 @@ browser = webdriver.Chrome(chrome_options=chrome_options)
 
 # pim_login(browser) # for login to PIM Dashboard
 
-#---------------------SYSTEM ADMIN-----------------------
+#---------------------SYSTEM ADMIN-------------------------
 # user_create(browser)  # for creating new user
 # role_create(browser)  # for creating new role
 # user_AssignRole(browser)  # to assign role to user
 # user_AssignCategory(browser)  # to assign category in user
 # user_AssignChannel(browser)  # to assign channel in user
 
-#------------------------CHANNEL-------------------------
+#------------------------CHANNEL---------------------------
 # channel_category(browser)  # channel -> category Channel Mapping
 # channel_brand(browser)  # channel -> Brand Channel Mapping
 # channel_mapping(browser) # channel -> Mapping
+
+#-------------------------ATTRIBUTE------------------------
+# product_attribute(browser) # Attribute -> Product Attribute
+# reference_attribute(browser) # Attribute -> Referance Attribute  
+# category_master_mapping(browser) # Attribute -> Categroy Master and Mapping  **not working properly for now
+
+#----------------------SUBSCRIBE---------------------------
+# channel subscribe 
+# category_subscription(browser) # Category Subscribe
+# brand_subscription(browser) # Brand Subscription
+
 
 input("Press enter to close the window..")
 browser.close()

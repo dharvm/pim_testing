@@ -15,22 +15,25 @@ def user_AssignChannel(browser):
     time.sleep(2)
 
     assign_1st = browser.find_element("xpath",'//a/span[contains(text(),"Assign Channel")]')
-    assign_2nd = browser.find_element("xpath",'//div[@class="card p-2 simple-btn-border mb-0 "]/a/span[contains(text(),"Assign Channel")]')
+   
 
     if assign_1st:
         assign_1st.click()
-    elif assign_2nd:
+        time.sleep(2)
+    elif not assign_1st:
+        assign_2nd = browser.find_element("xpath",'//div[@class="card p-2 simple-btn-border mb-0 "]/a/span[contains(text(),"Assign Channel")]')
         assign_2nd.click()
+        time.sleep(2)
     else:
         print("NOT ABLE TO FIND ON ASSIGN")
             
-    checkboxes = browser.find_elements("xpath", '//div[@id]/div/img/..//../div[@id]')
+    checkboxes = browser.find_elements("xpath", '//div[@id="assignCategory"]//img/../../../div[@id]')
     category_ids = [checkbox.get_attribute("id") for checkbox in checkboxes]
 
 
     print(category_ids)
     for i in range(10):
-        browser.find_element("xpath",f'//div[@id]/div/img/..//../div[@id="{category_ids[random.randrange(1,len(category_ids))]}"]').click()
+        browser.find_element("xpath",f'//div[@id="assignCategory"]//img/../../../div[@id="{category_ids[random.randrange(1,len(category_ids))]}"]').click()
 
     browser.find_element("xpath",'//a/span[text()="Assign"]').click()
     time.sleep(2)
